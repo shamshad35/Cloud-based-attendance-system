@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cloud Attendance - Login</title><link rel="stylesheet" href="/css/style.css"></head>
+<body class="login-page"><div class="login-card">
+<div class="logo">CA</div><h1>Cloud Attendance</h1><p class="muted">Student Attendance Management System</p>
+<form method="post" action="/login">
+<label>Username</label><input name="username" required placeholder="Enter username">
+<label>Password</label><input type="password" name="password" required placeholder="Enter password">
+<button class="btn primary" type="submit">Login</button>
+</form>
+<div th:if="${error}" class="alert error" th:text="${error}"></div>
+<div class="demo"><b>Demo Accounts</b><br>Faculty: <code>admin</code> / <code>admin123</code><br>Student: <code>240170107001</code> / <code>student123</code></div>
+</div></body></html>

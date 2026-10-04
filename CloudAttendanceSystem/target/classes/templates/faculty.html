@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Faculty Dashboard</title><link rel="stylesheet" href="/css/style.css"></head>
+<body><nav><div><b>☁ Cloud Attendance</b><span class="role">Faculty Dashboard</span></div><a href="/logout">Logout</a></nav>
+<main class="container"><div class="header-row"><div><h1>Mark Attendance</h1><p class="muted">Record attendance and store it in the cloud database.</p></div></div>
+<div th:if="${param.success}" class="alert success" th:text="${param.success}"></div>
+<form method="post" action="/faculty/attendance" class="card">
+<div class="filters"><div><label>Subject</label><select name="subjectId" required><option th:each="s:${subjects}" th:value="${s.id}" th:text="${s.code+' - '+s.name}"></option></select></div>
+<div><label>Date</label><input type="date" name="date" th:value="${today}" required></div></div>
+<table><thead><tr><th>Enrollment</th><th>Name</th><th>Status</th></tr></thead><tbody>
+<tr th:each="s:${students}"><td th:text="${s.enrollmentNo}"></td><td th:text="${s.name}"></td><td>
+<label class="radio"><input type="radio" th:name="${'student_'+s.id}" value="present" checked> Present</label>
+<label class="radio absent"><input type="radio" th:name="${'student_'+s.id}" value="absent"> Absent</label></td></tr>
+</tbody></table><button class="btn primary" type="submit">Save Attendance</button></form>
+<div class="card"><h2>System Architecture</h2><div class="flow"><span>Faculty Browser</span><b>→ HTTPS →</b><span>Spring Boot Cloud Server</span><b>→ SQL →</b><span>MySQL Database</span></div></div>
+</main></body></html>
