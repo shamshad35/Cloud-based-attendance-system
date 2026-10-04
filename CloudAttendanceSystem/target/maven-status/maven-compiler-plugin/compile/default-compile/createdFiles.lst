@@ -1,0 +1,11 @@
+com\college\attendance\model\User.class
+com\college\attendance\model\Attendance.class
+com\college\attendance\repository\StudentRepository.class
+com\college\attendance\model\Student.class
+com\college\attendance\repository\SubjectRepository.class
+com\college\attendance\CloudAttendanceApplication.class
+com\college\attendance\model\Subject.class
+com\college\attendance\controller\WebController.class
+com\college\attendance\config\DataInitializer.class
+com\college\attendance\repository\AttendanceRepository.class
+com\college\attendance\repository\UserRepository.class
